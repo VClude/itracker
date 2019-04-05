@@ -7,6 +7,7 @@ function SpotMain() {
 }
 
 function MarkerManager(e, t) {
+
     var n = this;
     n.map_ = e;
     n.mapZoom_ = e.getZoom();
@@ -502,7 +503,7 @@ if (!Object.create) {
             r.polylines = new Array;
             r.markermgr = new Array;
             r.devicePoints = new Array;
-            r.topBarHeight = 48;
+            r.topBarHeight = 0;
             r.limit = 50;
             r.colorList = ["#f21223", "#16a0a2", "#f3a128", "#1dc64d", "#fedb0a"];
             r.options = e.extend({}, e.fn.spotLiveWidget.options, t);
@@ -510,9 +511,9 @@ if (!Object.create) {
             r.sharePageURL = "http://share.findmespot.com/shared/faces/viewspots.jsp?glId=" + r.options.feedId;
             r.imageLocation = "http://d3ra5e5xmvzawh.cloudfront.net/live-widget/2.0/Resources/images/";
             r.imageLocetion = "";
-            r.$elem.height(r.options.height);
-            r.$elem.width(r.options.width);
-            r.$elem.css("position", "relative");
+            // r.$elem.height(r.options.height);
+            // r.$elem.width(r.options.width);
+            // r.$elem.css("position", "relative");
             if (!r.options.showLegend) r.options.legendHeight = 0;
             r.$mapTopBar = e("<div />", {
                 "class": "slw-top-bar"
@@ -816,6 +817,7 @@ var t = '<div class="info-window">' + '<div class="title">' + e.messengerName + 
         }
     };
     e.fn.spotLiveWidget = function(e) {
+        
         var t = Object.create(i);
         t.init(e, this);
         return this
@@ -825,7 +827,7 @@ var t = '<div class="info-window">' + '<div class="title">' + e.messengerName + 
         mapType: "ROADMAP",
         height: 500,
         width: 500,
-        legendHeight: 35,
+        legendHeight: 0,
         showLegend: true,
         autoRefresh: 0,
         polyline: {
@@ -833,4 +835,6 @@ var t = '<div class="info-window">' + '<div class="title">' + e.messengerName + 
             strokeColor: {}
         }
     }
-})(jQuery, window, document)
+})
+
+(jQuery, window, document)

@@ -975,7 +975,7 @@ var WOW;
             if (!S.test(e))
                 for (; i < o; i++)
                     for (n = this[i]; n && n !== t; n = n.parentNode)
-                        if (n.nodeType < 11 && (a ? a.index(n) > -1 : 1 === n.nodeType && v.find.matchesSelector(n, e))) {
+                        if (n.nodeType < 11 && (a ? a.monitor(n) > -1 : 1 === n.nodeType && v.find.matchesSelector(n, e))) {
                             r.push(n);
                             break
                         }
@@ -1570,7 +1570,7 @@ var WOW;
             if (l && c.nodeType && !("click" === e.type && e.button >= 1))
                 for (; c !== this; c = c.parentNode || this)
                     if (1 === c.nodeType && ("click" !== e.type || !0 !== c.disabled)) {
-                        for (r = [], a = {}, n = 0; n < l; n++) void 0 === a[o = (i = t[n]).selector + " "] && (a[o] = i.needsContext ? v(o, this).index(c) > -1 : v.find(o, this, null, [c]).length), a[o] && r.push(i);
+                        for (r = [], a = {}, n = 0; n < l; n++) void 0 === a[o = (i = t[n]).selector + " "] && (a[o] = i.needsContext ? v(o, this).monitor(c) > -1 : v.find(o, this, null, [c]).length), a[o] && r.push(i);
                         r.length && s.push({
                             elem: c,
                             handlers: r
@@ -7942,7 +7942,7 @@ var WOW;
                         callbacks: {
                             title: function (e, t) {
                                 var n = "";
-                                return e.length > 0 && (e[0].yLabel ? n = e[0].yLabel : t.labels.length > 0 && e[0].index < t.labels.length && (n = t.labels[e[0].index])), n
+                                return e.length > 0 && (e[0].yLabel ? n = e[0].yLabel : t.labels.length > 0 && e[0].monitor < t.labels.length && (n = t.labels[e[0].monitor])), n
                             },
                             label: function (e, t) {
                                 return (t.datasets[e.datasetIndex].label || "") + ": " + e.xLabel
@@ -7969,7 +7969,7 @@ var WOW;
                                 s = i.getDataset(),
                                 l = e.custom || {},
                                 c = o.options.elements.rectangle;
-                            e._xScale = i.getScaleForId(a.xAxisID), e._yScale = i.getScaleForId(a.yAxisID), e._datasetIndex = i.index, e._index = t, e._model = {
+                            e._xScale = i.getScaleForId(a.xAxisID), e._yScale = i.getScaleForId(a.yAxisID), e._datasetIndex = i.monitor, e._index = t, e._model = {
                                 datasetLabel: s.label,
                                 label: o.data.labels[t],
                                 borderSkipped: l.borderSkipped ? l.borderSkipped : c.borderSkipped,
@@ -7985,8 +7985,8 @@ var WOW;
                                 a = r.getBasePixel(),
                                 s = r.isHorizontal(),
                                 l = i._ruler || i.getRuler(),
-                                c = i.calculateBarValuePixels(i.index, t),
-                                u = i.calculateBarIndexPixels(i.index, t, l);
+                                c = i.calculateBarValuePixels(i.monitor, t),
+                                u = i.calculateBarIndexPixels(i.monitor, t, l);
                             o.horizontal = s, o.base = n ? a : c.base, o.x = s ? n ? a : c.head : u.center, o.y = s ? u.center : n ? a : c.head, o.height = s ? u.size : void 0, o.width = s ? void 0 : u.size
                         },
                         getValueScaleId: function () {
@@ -8015,7 +8015,7 @@ var WOW;
                         getRuler: function () {
                             var e, t, n = this.getIndexScale(),
                                 i = this.getStackCount(),
-                                o = this.index,
+                                o = this.monitor,
                                 r = [],
                                 a = n.isHorizontal(),
                                 s = a ? n.left : n.top,
@@ -8129,7 +8129,7 @@ var WOW;
                             },
                             label: function (e, t) {
                                 var n = t.datasets[e.datasetIndex].label || "",
-                                    i = t.datasets[e.datasetIndex].data[e.index];
+                                    i = t.datasets[e.datasetIndex].data[e.monitor];
                                 return n + ": (" + e.xLabel + ", " + e.yLabel + ", " + i.r + ")"
                             }
                         }
@@ -8152,7 +8152,7 @@ var WOW;
                                 s = i.getScaleForId(o.yAxisID),
                                 l = i._resolveElementOptions(e, t),
                                 c = i.getDataset().data[t],
-                                u = i.index,
+                                u = i.monitor,
                                 d = n ? a.getPixelForDecimal(.5) : a.getPixelForValue("object" == typeof c ? c : NaN, t, u),
                                 f = n ? s.getBasePixel() : s.getPixelForValue(c, t, u);
                             e._xScale = a, e._yScale = s, e._options = l, e._datasetIndex = u, e._index = t, e._model = {
@@ -8179,7 +8179,7 @@ var WOW;
                         },
                         _resolveElementOptions: function (e, t) {
                             var n, i, o, a = this.chart,
-                                s = a.data.datasets[this.index],
+                                s = a.data.datasets[this.monitor],
                                 l = e.custom || {},
                                 c = a.options.elements.point,
                                 u = r.options.resolve,
@@ -8189,7 +8189,7 @@ var WOW;
                                     chart: a,
                                     dataIndex: t,
                                     dataset: s,
-                                    datasetIndex: this.index
+                                    datasetIndex: this.monitor
                                 },
                                 p = ["backgroundColor", "borderColor", "borderWidth", "hoverBackgroundColor", "hoverBorderColor", "hoverBorderWidth", "hoverRadius", "hitRadius", "pointStyle"];
                             for (n = 0, i = p.length; n < i; ++n) f[o = p[n]] = u([l[o], s[o], c[o]], h, t);
@@ -8248,7 +8248,7 @@ var WOW;
                             }
                         },
                         onClick: function (e, t) {
-                            var n, i, o, r = t.index,
+                            var n, i, o, r = t.monitor,
                                 a = this.chart;
                             for (n = 0, i = (a.data.datasets || []).length; n < i; ++n)(o = a.getDatasetMeta(n)).data[r] && (o.data[r].hidden = !o.data[r].hidden);
                             a.update()
@@ -8263,8 +8263,8 @@ var WOW;
                                 return ""
                             },
                             label: function (e, t) {
-                                var n = t.labels[e.index],
-                                    i = ": " + t.datasets[e.datasetIndex].data[e.index];
+                                var n = t.labels[e.monitor],
+                                    i = ": " + t.datasets[e.datasetIndex].data[e.monitor];
                                 return r.isArray(n) ? (n = n.slice())[0] += i : n += i, n
                             }
                         }
@@ -8328,7 +8328,7 @@ var WOW;
                                     y: -.5 * (T.y + k.y)
                                 }
                             }
-                            n.borderWidth = t.getMaxBorderWidth(d.data), n.outerRadius = Math.max((c - n.borderWidth) / 2, 0), n.innerRadius = Math.max(f ? n.outerRadius / 100 * f : 0, 0), n.radiusLength = (n.outerRadius - n.innerRadius) / n.getVisibleDatasetCount(), n.offsetX = u.x * n.outerRadius, n.offsetY = u.y * n.outerRadius, d.total = t.calculateTotal(), t.outerRadius = n.outerRadius - n.radiusLength * t.getRingIndex(t.index), t.innerRadius = Math.max(t.outerRadius - n.radiusLength, 0), r.each(d.data, function (n, i) {
+                            n.borderWidth = t.getMaxBorderWidth(d.data), n.outerRadius = Math.max((c - n.borderWidth) / 2, 0), n.innerRadius = Math.max(f ? n.outerRadius / 100 * f : 0, 0), n.radiusLength = (n.outerRadius - n.innerRadius) / n.getVisibleDatasetCount(), n.offsetX = u.x * n.outerRadius, n.offsetY = u.y * n.outerRadius, d.total = t.calculateTotal(), t.outerRadius = n.outerRadius - n.radiusLength * t.getRingIndex(t.monitor), t.innerRadius = Math.max(t.outerRadius - n.radiusLength, 0), r.each(d.data, function (n, i) {
                                 t.updateElement(n, i, e)
                             })
                         },
@@ -8348,7 +8348,7 @@ var WOW;
                                 g = n && l.animateScale ? 0 : i.outerRadius,
                                 v = r.valueAtIndexOrDefault;
                             r.extend(e, {
-                                _datasetIndex: i.index,
+                                _datasetIndex: i.monitor,
                                 _index: t,
                                 _model: {
                                     x: c + o.offsetX,
@@ -8380,7 +8380,7 @@ var WOW;
                             return t > 0 && !isNaN(e) ? 2 * Math.PI * (e / t) : 0
                         },
                         getMaxBorderWidth: function (e) {
-                            for (var t, n, i = 0, o = this.index, r = e.length, a = 0; a < r; a++) t = e[a]._model ? e[a]._model.borderWidth : 0, i = (n = e[a]._chart ? e[a]._chart.config.data.datasets[o].hoverBorderWidth : 0) > (i = t > i ? t : i) ? n : i;
+                            for (var t, n, i = 0, o = this.monitor, r = e.length, a = 0; a < r; a++) t = e[a]._model ? e[a]._model.borderWidth : 0, i = (n = e[a]._chart ? e[a]._chart.config.data.datasets[o].hoverBorderWidth : 0) > (i = t > i ? t : i) ? n : i;
                             return i
                         }
                     })
@@ -8428,7 +8428,7 @@ var WOW;
                                 f = a.getScaleForId(s.yAxisID),
                                 h = a.getDataset(),
                                 p = t(h, u);
-                            for (p && (o = l.custom || {}, void 0 !== h.tension && void 0 === h.lineTension && (h.lineTension = h.tension), l._scale = f, l._datasetIndex = a.index, l._children = c, l._model = {
+                            for (p && (o = l.custom || {}, void 0 !== h.tension && void 0 === h.lineTension && (h.lineTension = h.tension), l._scale = f, l._datasetIndex = a.monitor, l._children = c, l._model = {
                                 spanGaps: h.spanGaps ? h.spanGaps : u.spanGaps,
                                 tension: o.tension ? o.tension : r.valueOrDefault(h.lineTension, d.tension),
                                 backgroundColor: o.backgroundColor ? o.backgroundColor : h.backgroundColor || d.backgroundColor,
@@ -8467,7 +8467,7 @@ var WOW;
                                 s = a.getMeta(),
                                 l = e.custom || {},
                                 c = a.getDataset(),
-                                u = a.index,
+                                u = a.monitor,
                                 d = c.data[t],
                                 f = a.getScaleForId(s.yAxisID),
                                 h = a.getScaleForId(s.xAxisID),
@@ -8608,7 +8608,7 @@ var WOW;
                             }
                         },
                         onClick: function (e, t) {
-                            var n, i, o, r = t.index,
+                            var n, i, o, r = t.monitor,
                                 a = this.chart;
                             for (n = 0, i = (a.data.datasets || []).length; n < i; ++n)(o = a.getDatasetMeta(n)).data[r].hidden = !o.data[r].hidden;
                             a.update()
@@ -8620,7 +8620,7 @@ var WOW;
                                 return ""
                             },
                             label: function (e, t) {
-                                return t.labels[e.index] + ": " + e.yLabel
+                                return t.labels[e.monitor] + ": " + e.yLabel
                             }
                         }
                     }
@@ -8636,7 +8636,7 @@ var WOW;
                                 a = n.options,
                                 s = a.elements.arc,
                                 l = Math.min(i.right - i.left, i.bottom - i.top);
-                            n.outerRadius = Math.max((l - s.borderWidth / 2) / 2, 0), n.innerRadius = Math.max(a.cutoutPercentage ? n.outerRadius / 100 * a.cutoutPercentage : 1, 0), n.radiusLength = (n.outerRadius - n.innerRadius) / n.getVisibleDatasetCount(), t.outerRadius = n.outerRadius - n.radiusLength * t.index, t.innerRadius = t.outerRadius - n.radiusLength, o.count = t.countVisibleElements(), r.each(o.data, function (n, i) {
+                            n.outerRadius = Math.max((l - s.borderWidth / 2) / 2, 0), n.innerRadius = Math.max(a.cutoutPercentage ? n.outerRadius / 100 * a.cutoutPercentage : 1, 0), n.radiusLength = (n.outerRadius - n.innerRadius) / n.getVisibleDatasetCount(), t.outerRadius = n.outerRadius - n.radiusLength * t.monitor, t.innerRadius = t.outerRadius - n.radiusLength, o.count = t.countVisibleElements(), r.each(o.data, function (n, i) {
                                 t.updateElement(n, i, e)
                             })
                         },
@@ -8648,7 +8648,7 @@ var WOW;
                                 x = b + (e.hidden ? 0 : d),
                                 w = l.animateScale ? 0 : c.getDistanceFromCenterForValue(a.data[t]);
                             r.extend(e, {
-                                _datasetIndex: i.index,
+                                _datasetIndex: i.monitor,
                                 _index: t,
                                 _scale: c,
                                 _model: {
@@ -8713,7 +8713,7 @@ var WOW;
                                 l = t.chart.options.elements.line,
                                 c = t.chart.scale;
                             void 0 !== s.tension && void 0 === s.lineTension && (s.lineTension = s.tension), r.extend(n.dataset, {
-                                _datasetIndex: t.index,
+                                _datasetIndex: t.monitor,
                                 _scale: c,
                                 _children: o,
                                 _loop: !0,
@@ -8740,7 +8740,7 @@ var WOW;
                                 l = i.chart.options.elements.point,
                                 c = s.getPointPositionForValue(t, a.data[t]);
                             void 0 !== a.radius && void 0 === a.pointRadius && (a.pointRadius = a.radius), void 0 !== a.hitRadius && void 0 === a.pointHitRadius && (a.pointHitRadius = a.hitRadius), r.extend(e, {
-                                _datasetIndex: i.index,
+                                _datasetIndex: i.monitor,
                                 _index: t,
                                 _scale: s,
                                 _model: {
@@ -10618,7 +10618,7 @@ var WOW;
                                     o = i ? i.length : 0;
                                 if (e.length > 0) {
                                     var r = e[0];
-                                    r.xLabel ? n = r.xLabel : o > 0 && r.index < o && (n = i[r.index])
+                                    r.xLabel ? n = r.xLabel : o > 0 && r.monitor < o && (n = i[r.monitor])
                                 }
                                 return n
                             },
@@ -10630,7 +10630,7 @@ var WOW;
                                 return n && (n += ": "), n += e.yLabel
                             },
                             labelColor: function (e, t) {
-                                var n = t.getDatasetMeta(e.datasetIndex).data[e.index]._view;
+                                var n = t.getDatasetMeta(e.datasetIndex).data[e.monitor]._view;
                                 return {
                                     borderColor: n.borderColor,
                                     backgroundColor: n.backgroundColor
@@ -13313,7 +13313,7 @@ var WOW;
                             i = window.scrollY;
                         e(".wow").each(function () {
                             if ("visible" != e(this).css("visibility") && (n + i - 100 > o(this) && i < o(this) || n + i - 100 > o(this) + e(this).height() && i < o(this) + e(this).height() || n + i == e(document).height() && o(this) + 100 > e(document).height())) {
-                                var r = e(this).index(".wow"),
+                                var r = e(this).monitor(".wow"),
                                     a = e(this).attr("data-wow-delay");
                                 if (a) {
                                     a = e(this).attr("data-wow-delay").slice(0, -1);
@@ -13359,7 +13359,7 @@ var WOW;
                     e(".wow").each(function () {
                         e(this).css({
                             visibility: "hidden"
-                        }), t[e(this).index(".wow")] = e(this).css("animation-name"), e(this).css({
+                        }), t[e(this).monitor(".wow")] = e(this).css("animation-name"), e(this).css({
                             "animation-name": "none"
                         })
                     }), e(window).scroll(function () {
@@ -13380,7 +13380,7 @@ var WOW;
                             }
                         }), i(), n--) : i()
                     }), e(".wow").each(function () {
-                        var n = e(this).index(".wow"),
+                        var n = e(this).monitor(".wow"),
                             i = e(this).attr("data-wow-delay");
                         i ? (i = e(this).attr("data-wow-delay").slice(0, -1), parseFloat(i), e(this).addClass("animated"), e(this).css({
                             visibility: "visible"
@@ -15743,7 +15743,7 @@ function _classCallCheck(e, t) {
                                     var s = !0;
                                     o ? (e('input[type="checkbox"]', this).prop("checked", function (e, t) {
                                         return !t
-                                    }), s = n(h, v ? b ? e(this).index() - e(this).prevAll(".optgroup").length - 1 : e(this).index() - 1 : b ? e(this).index() - e(this).prevAll(".optgroup").length : e(this).index(), i), k.trigger("focus")) : (d.find("li").removeClass("active"), e(this).toggleClass("active"), k.val(e(this).text())), T(d, e(this)), i.find("option").eq(r).prop("selected", s), i.trigger("change"), void 0 !== t && t()
+                                    }), s = n(h, v ? b ? e(this).monitor() - e(this).prevAll(".optgroup").length - 1 : e(this).monitor() - 1 : b ? e(this).monitor() - e(this).prevAll(".optgroup").length : e(this).monitor(), i), k.trigger("focus")) : (d.find("li").removeClass("active"), e(this).toggleClass("active"), k.val(e(this).text())), T(d, e(this)), i.find("option").eq(r).prop("selected", s), i.trigger("change"), void 0 !== t && t()
                                 }
                                 a.stopPropagation()
                             })
@@ -15784,7 +15784,7 @@ function _classCallCheck(e, t) {
                                 (o || v) && (p || k.trigger("close"))
                             }
                         }), o && i.find("option:selected:not(:disabled)").each(function () {
-                            var t = e(this).index();
+                            var t = e(this).monitor();
                             n(h, t, i), d.find("li").eq(t).find(":checkbox").prop("checked", !0)
                         });
                         var T = function (t, n) {
@@ -17087,7 +17087,7 @@ function _classCallCheck(e, t) {
                             };
                             var i = R.isOldIOSPhone || R.isOldAndroid || R.isMobileOpera;
                             for (R.animationName && R.transform && !i || (a.showAnimationDuration = a.hideAnimationDuration = 0), n = 0; n < ve.length; n++) r["init" + ve[n]]();
-                            t && (r.ui = new t(r, o)).init(), Te("firstUpdate"), u = u || a.index || 0, (isNaN(u) || 0 > u || u >= Wt()) && (u = 0), r.currItem = Ht(u), (R.isOldIOSPhone || R.isOldAndroid) && (ge = !1), e.setAttribute("aria-hidden", "false"), a.modal && (ge ? e.style.position = "fixed" : (e.style.position = "absolute", e.style.top = o.getScrollY() + "px")), void 0 === F && (Te("initialLayout"), F = N = o.getScrollY());
+                            t && (r.ui = new t(r, o)).init(), Te("firstUpdate"), u = u || a.monitor || 0, (isNaN(u) || 0 > u || u >= Wt()) && (u = 0), r.currItem = Ht(u), (R.isOldIOSPhone || R.isOldAndroid) && (ge = !1), e.setAttribute("aria-hidden", "false"), a.modal && (ge ? e.style.position = "fixed" : (e.style.position = "absolute", e.style.top = o.getScrollY() + "px")), void 0 === F && (Te("initialLayout"), F = N = o.getScrollY());
                             var c = "pswp--open ";
                             for (a.mainClass && (c += a.mainClass + " "), a.showHideOpacity && (c += "pswp--animate_opacity "), c += D ? "pswp--touch" : "pswp--notouch", c += R.animationName ? " pswp--css_animation" : "", c += R.svg ? " pswp--svg" : "", o.addClass(e, c), r.updateSize(), f = -1, me = null, n = 0; 3 > n; n++) De((n + f) * pe.x, C[n].el.style);
                             L || o.bind(r.scrollWrap, p, r), ke("initialZoomInEnd", function () {
@@ -17151,7 +17151,7 @@ function _classCallCheck(e, t) {
                             ye.x = window.innerWidth, ye.y = window.innerHeight, e.style.height = ye.y + "px"
                         }
                         if (de.x = r.scrollWrap.clientWidth, de.y = r.scrollWrap.clientHeight, Ve(), pe.x = de.x + Math.round(de.x * a.spacing), pe.y = de.y, Pe(pe.x * fe), Te("beforeResize"), void 0 !== f) {
-                            for (var i, s, l, c = 0; 3 > c; c++) i = C[c], De((c + f) * pe.x, i.el.style), l = u + c - 1, a.loop && Wt() > 2 && (l = we(l)), (s = Ht(l)) && (w || s.needsUpdate || !s.bounds) ? (r.cleanSlide(s), r.setContent(i, l), 1 === c && (r.currItem = s, r.updateCurrZoomItem(!0)), s.needsUpdate = !1) : -1 === i.index && l >= 0 && r.setContent(i, l), s && s.container && ($t(s, de), Qt(s), Ie(s));
+                            for (var i, s, l, c = 0; 3 > c; c++) i = C[c], De((c + f) * pe.x, i.el.style), l = u + c - 1, a.loop && Wt() > 2 && (l = we(l)), (s = Ht(l)) && (w || s.needsUpdate || !s.bounds) ? (r.cleanSlide(s), r.setContent(i, l), 1 === c && (r.currItem = s, r.updateCurrZoomItem(!0)), s.needsUpdate = !1) : -1 === i.monitor && l >= 0 && r.setContent(i, l), s && s.container && ($t(s, de), Qt(s), Ie(s));
                             w = !1
                         }
                         v = g = r.currItem.initialZoomLevel, (J = r.currItem.bounds) && (ue.x = J.center.x, ue.y = J.center.y, Ae(!0)), Te("resize")
@@ -17551,7 +17551,7 @@ function _classCallCheck(e, t) {
                 },
                 Kt = function () {
                     if (Vt.length) {
-                        for (var e, t = 0; t < Vt.length; t++)(e = Vt[t]).holder.index === e.index && Yt(e.index, e.item, e.baseDiv, e.img, 0, e.clearPlaceholder);
+                        for (var e, t = 0; t < Vt.length; t++)(e = Vt[t]).holder.index === e.monitor && Yt(e.monitor, e.item, e.baseDiv, e.img, 0, e.clearPlaceholder);
                         Vt = []
                     }
                 };
@@ -19019,14 +19019,14 @@ initPhotoSwipeFromDOM(".mdb-lightbox"),
                             if (l) {
                                 n.preventDefault();
                                 var d = r.data("index");
-                                s = i.index(), o.deleteChip(d, s, r);
+                                s = i.monitor(), o.deleteChip(d, s, r);
                                 var f = null;
                                 s + 1 < a ? f = s : s !== a && s + 1 !== a || (f = a - 1), f < 0 && (f = null), null !== f && o.selectChip(d, f, r), a || r.find("input").focus()
                             } else if (c) {
-                                if ((s = i.index() - 1) < 0) return;
+                                if ((s = i.monitor() - 1) < 0) return;
                                 e(t.CHIP).removeClass("selected"), o.selectChip(r.data("index"), s, r)
                             } else if (u) {
-                                if (s = i.index() + 1, e(t.CHIP).removeClass("selected"), s > a) return void r.find("input").focus();
+                                if (s = i.monitor() + 1, e(t.CHIP).removeClass("selected"), s > a) return void r.find("input").focus();
                                 o.selectChip(r.data("index"), s, r)
                             }
                         }
@@ -19050,7 +19050,7 @@ initPhotoSwipeFromDOM(".mdb-lightbox"),
                     var i = e(n.target),
                         r = i.closest(t.CHIPS),
                         a = i.closest(t.CHIP);
-                    n.stopPropagation(), o.deleteChip(r.data("index"), a.index(), r), r.find("input").focus()
+                    n.stopPropagation(), o.deleteChip(r.data("index"), a.monitor(), r), r.find("input").focus()
                 })
             }, this.chips = function (e) {
                 var t = "";

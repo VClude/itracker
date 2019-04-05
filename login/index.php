@@ -27,7 +27,7 @@
                         <div class="page-links">
                             <a href="#" class="active">Login</a>
                         </div>
-                        <form action="auth.php" method="post" name="Login_Form">
+                        <form action="../auth.php" method="post" name="Login_Form">
                             <input class="form-control" type="text" name="Username" placeholder="E-mail Address" required>
                             <input class="form-control" type="password" name="Password" placeholder="Password" required>
                             <?php if(isset($msg)){?>
@@ -35,7 +35,7 @@
 
                              <?php } ?>
                             <div class="form-button">
-                                <button id="submit" type="submit" class="ibtn">Login</button>
+                                <button id="submit" name="Submit" type="submit" class="ibtn">Login</button>
                             </div>
                         </form>
                     </div>

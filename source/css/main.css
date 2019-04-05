@@ -60,8 +60,9 @@
     padding-right:20px;
 }
 #map {
-    height: 600px; /* The height is 400 pixels */
-    width: 100%;
+    height: 100vh; /* The height is 400 pixels */
+    width: 100vw;
+
 }/* The width is the width of the web page */
 .first_row{
     background-color: #2F75B5;
@@ -172,4 +173,342 @@ table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
 bottom: .5em;
+}
+
+*{
+    font-family: "Roboto";
+}
+
+a{
+    color: #000;
+}
+
+html, body, #wrapper{
+    height: 100%;
+    width: 100%;
+}
+#map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.flex-column{
+    flex-flow: column;
+    flex-wrap: wrap;
+}
+
+.flex-row{
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.red-text{
+    color: #c62828;
+}
+.green-text{
+    color: #2e7d32;
+}
+.yellow-text{
+    color: #fbc02d;
+}
+.black-text{
+    color: #111111;
+}
+.white-text{
+    color: #ffffff;
+}
+.grey-text {
+    color: #f0f0f0;
+}
+.active{
+    background-color: #db4437;
+}
+.font-weight-light{
+    font-family: "Roboto Light", sans-serif;
+}
+.font-weight-bold{
+    font-family: "Roboto Bold", sans-serif;
+}
+.font-weight-thin{
+    font-family: "Roboto Thin", sans-serif;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 350px;
+    position: fixed;
+    top: 0;
+    left: -350px;
+    height: 100vh;
+    z-index: 999;
+    background: #fff;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #b61827;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.btn-icon-with-text{
+    border-radius: 25px !important;
+}
+
+.btn-icon-only{
+    border-radius: 35px !important;
+}
+
+#dismiss:hover {
+    background: #fff;
+    color: #ef5350;
+}
+#rightbarCollapse{
+    float: right;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#sidebar .sidebar-header{
+    padding: 5px 0 5px 0;
+    background: #ef5350;
+}
+
+#sidebar ul.components, #rightbar ul.components {
+    border-bottom: 1px solid #000;
+}
+
+#sidebar ul p, #rightbar ul p {
+    color: #000;
+    padding: 10px;
+}
+
+#sidebar ul li a, #rightbar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover, #rightbar ul li a:hover {
+    color: #ef5350;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"], #rightbar ul li.active>a {
+    color: #fff;
+    background: #ef5350;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #fff;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#rightbar {
+    width: 350px;
+    position: fixed;
+    top: 0;
+    right: -350px;
+    height: 100vh;
+    z-index: 999;
+    background: #fff;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#rightbar.active {
+    right: 0;
+}
+
+#dismiss-right {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #b61827;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#dismiss-right:hover {
+    background: #fff;
+    color: #ef5350;
+}
+
+#rightbar .sidebar-header{
+    padding: 25px;
+    background: #ef5350;
+}
+
+/*Device Details Style*/
+
+.info{
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.clearboth{
+    clear: both;
+}
+
+.font-small{
+    font-size: 10pt;
+}
+
+.title-info{
+    margin-bottom: 10px;
+}
+
+.no-padding-left{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-padding-left .row{
+    margin: 0;
+}
+
+.info i.fas{
+    font-size: 18pt;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.button-bottom{
+    position: fixed;
+    text-align: center;
+    bottom: 10px;
+    -webkit-border-radius: 25px !important;
+    -moz-border-radius: 25px !important;
+    border-radius: 25px !important;
+    left: 45%;
+    align-self: center;
+    transition: all 0.3s;
+}
+
+
+
+#bottombar {
+    width: 100vw;
+    position: fixed;
+    bottom: -450px;
+    height: 450px;
+    z-index: 999;
+    background: #fff;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#bottombar.active {
+    bottom: 0;
+}
+
+#dismiss-bottom {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #b61827;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#dismiss-bottom:hover {
+    background: #fff;
+    color: #ef5350;
+}
+
+#bottombar .sidebar-header{
+    position: sticky;
+    top: 0;
+    padding: 25px;
+    background: #ef5350;
+}
+
+.scrollable{
+  height:300px;
+  overflow-y: scroll;
 }
