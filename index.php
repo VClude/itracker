@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php session_start(); /* Starts the session */
+if(!isset($_SESSION['UserData']['Username'])){
+header("location:login/index.php");
+exit;
+}
+?>
 <head>
     <meta charset="UTF-8">
     <title>ITracker-Sat</title>
