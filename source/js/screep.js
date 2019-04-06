@@ -1,10 +1,37 @@
 $( document ).ready(function() {
     console.log( "ready!" );
-    $('#deviceTable').DataTable({
-        lengthChange: false,
-        searching: false
+    // $('#deviceTable').DataTable({
+    //     lengthChange: false,
+    //     searching: false
+    // });
+    tabel = $('#deviceTable').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ordering": true, // Set true agar bisa di sorting
+        "order": [[ 0, 'desc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
+    "ajax":
+        {
+            "url": "xfetch.php", // URL file untuk proses select datanya
+            "type": "POST"
+        },
+        "deferRender": true,
+        "aLengthMenu": [[4],[4]], // Combobox Limit
+        "columns": [
+            { "data": "messengerId" }, 
+            { "data": "messengerName" }, 
+            { "data": "messageType" }, 
+            { "data": "latitude" }, 
+            { "data": "longitude" }, 
+            { "data": "datetime" }, 
+            { "data": "battery" }, 
+            { "data": "altitude" },
+            {
+                "render": function(data, type, row, meta) {
+        return '<td data-id="'+ row.ID +'">'+ row.ID +'</td>';
+              }
+            },     
+        ],
     });
-
     $("#sidebar").mCustomScrollbar({
         theme: "minimal"
     });
@@ -70,7 +97,7 @@ function initMap() {
     var uluru = {lat: -6.21462, lng: 106.84513};
 
     var mapOptions = {
-        zoom: 15,
+        zoom: 12,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
         center: uluru
@@ -161,31 +188,128 @@ $('#device_id, #device_name, #battery, #message, #lat, #lng, #date, #timestamp')
 
 //Datatables onRowClicked Fn
 $(document).ready(function () {
+
     $('#deviceTable tbody').on( 'click', 'tr', function () {
         //searching already given active class to table childs
         $('#deviceTable tbody').find('tr').removeClass('active');
         //setting the mew row visual to see the user
         $(this).toggleClass('active');
 
-        //getting the id from the <tr> tag triggering the event
-        var device_id = this.id;
-
+        var device_id = this.document.getElementById('#yeet');
+        var dev_name, battery, message, latlng, lat, lng, date, timestamp;
+        $.ajax({
+            url:"fetch.php",
+            method: "POST",
+            data:{productID:device_id},
+            dataType:"JSON",
+            success:function(data)
+            {   
+        //getting the id of the li that triggering the click
+        
         //getting the right value for the device id
-        for (var index = 0; index < device_arr.length; ++index) {
-            if(device_arr[index]['device_id'] === device_id){
-                dev_name = device_arr[index]['name'];
-                battery = device_arr[index]['battery'];
-                message = device_arr[index]['message'];
-                lng = device_arr[index]['lng'];
-                lat = device_arr[index]['lat'];
-                latlng = device_arr[index]['latlng'];
-                date = device_arr[index]['date'];
-                timestamp = device_arr[index]['last_timestamp'];
-            }
-        }
+        dev_name = data.name;
+        battery = data.battery;
+        message = data.message;
+        lng = data.lng;
+        lat = data.lat;
+        latlng = new google.maps.LatLng(lat, lng);
+        date = data.date;
+        timestamp = data.last_timestamp;
+    //     var uluru = {lat: data.lat, lng: data.lng};
+    // map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-        //Move the map to the device location
-        smoothlyAnimatePanTo(map, latlng);
+    // marker = new google.maps.Marker({position: uluru, map: map});
+//Move the map to the device location
+smoothlyAnimatePanTo(map, latlng);
+
+
+            }
+        });
+
     } );
+
+
+    $('#deviceList tbody').on( 'click', 'tr', function () {
+        //searching already given active class to table childs
+        $('#deviceList tbody').find('tr').removeClass('active');
+        //setting the mew row visual to see the user
+        $(this).toggleClass('active');
+        var ssuccess;
+        var device_id = this.id;
+        var dev_name, battery, message, latlng, lat, lng, date, timestamp;
+        $.ajax({
+            url:"fetch.php",
+            method: "POST",
+            data:{productID:device_id},
+            dataType:"JSON",
+            success:function(data)
+            {
+                console.log("AJAX SUCCESS 1");
+                ssuccess = 'yes';  
+        //getting the id of the li that triggering the click
+        
+        //getting the right value for the device id
+        dev_name = data.name;
+        battery = data.battery;
+        message = data.message;
+        lng = data.lng;
+        lat = data.lat;
+        latlng = new google.maps.LatLng(lat, lng);
+        date = data.date;
+        timestamp = data.last_timestamp;
+    //     var uluru = {lat: data.lat, lng: data.lng};
+    // map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    // marker = new google.maps.Marker({position: uluru, map: map});
+//Move the map to the device location
+smoothlyAnimatePanTo(map, latlng);
+//Changing text at device informaion in the DOM
+$('#device_id, #device_name, #battery, #message, #lat, #lng, #date, #timestamp').fadeOut(500, function() {
+    $('#device_id').text(device_id).fadeIn(500);
+    $('#device_name').text(dev_name).fadeIn(500);
+    $('#battery').text(battery).fadeIn(500);
+    $('#message').text(message).fadeIn(500);
+    $('#lat').text(lat).fadeIn(500);
+    $('#lng').text(lng).fadeIn(500);
+    $('#date').text(date).fadeIn(500);
+    $('#timestamp').text(timestamp).fadeIn(500);
+});
+
+            }
+        });
+
+        
+if (ssuccess == 'yes'){
+    var yeete;
+    var yarray = [];
+    $.ajax({
+        
+        url:"fetchpoly.php",
+        method: "POST",
+        data:{productID:device_id},
+        dataType:"JSON",
+        success:function(data)
+        {
+            console.log("AJAX SUCCESS 2");
+            yeete = JSON.parse(data);
+            yarray = [{lat: -6.58617, lng: 106.87687},
+                {lat: -6.59085, lng: 106.87891},
+                {lat: -6.59088, lng: 106.87891},
+                {lat: -6.59084, lng: 106.87891}
+      ];
+            var jalur = new google.maps.Polygon({
+                paths: yarray,
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2
+              });
+                 jalur.setMap(map);
+        }
+    });
+}
+    } );
+
+    
+
 });
 

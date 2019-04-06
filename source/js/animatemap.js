@@ -149,10 +149,12 @@ function changeMarkerPos(lat, lon){
 function smoothlyAnimatePanTo(map, destLatLng) {
     if(willAnimatePanTo(map, destLatLng)) {
         marker.setPosition(destLatLng);
-        map.panTo(destLatLng)
+        map.panTo(destLatLng);
 
     } else {
+        marker.setPosition(destLatLng);
         smoothlyAnimatePanToWorkarround(map, destLatLng)
+        
     }
 }
 

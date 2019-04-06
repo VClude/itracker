@@ -1,6 +1,5 @@
 <?php
 include "cn.php"; // Load file koneksi.php
-
 $search = $_POST['search']['value']; // Ambil data yang di ketik user pada textbox pencarian
 $limit = $_POST['length']; // Ambil data limit per page
 $start = $_POST['start']; // Ambil data start

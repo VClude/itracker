@@ -44,7 +44,7 @@
     color: #ffffff;
 }
 .grey-text {
-    color: #f0f0f0;
+    color: gray;
 }
 .font-weight-light{
     font-family: "Roboto Light", sans-serif;
@@ -221,10 +221,13 @@ html, body, #wrapper{
     color: #ffffff;
 }
 .grey-text {
-    color: #f0f0f0;
+    color: #111111;
+}
+.aqua-text {
+    color: lightskyblue;
 }
 .active{
-    background-color: #db4437;
+    background-color: lightskyblue;
 }
 .font-weight-light{
     font-family: "Roboto Light", sans-serif;
@@ -461,7 +464,16 @@ ul.CTAs a {
     transition: all 0.3s;
 }
 
-
+.button-left{
+    position: fixed;
+    text-align: center;
+    bottom: 10px;
+    -webkit-border-radius: 25px !important;
+    -moz-border-radius: 25px !important;
+    border-radius: 25px !important;
+    align-self: center;
+    transition: all 0.3s;
+}
 
 #bottombar {
     width: 100vw;
