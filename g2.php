@@ -53,7 +53,7 @@ echo '<tr id='. $item->ID .'>
     <td><i class="fas fa-circle yellow-text"></i> </td>
     </tr>';
 }
- elseif ($conv > 86400){
+ elseif ($conv > 86400 && $conv < 259200){
 
     echo '<tr id='. $item->ID .'>
     <th scope="row">'. $item->messengerName .'</th>

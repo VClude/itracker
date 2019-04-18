@@ -8,7 +8,7 @@ $( document ).ready(function() {
         "processing": true,
         "serverSide": true,
         "ordering": true, // Set true agar bisa di sorting
-        "order": [[ 0, 'desc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
+        "order": [[ 5, 'desc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
     "ajax":
         {
             "url": "xfetch.php", // URL file untuk proses select datanya
@@ -168,6 +168,8 @@ $(document).ready(function () {
 
     // marker = new google.maps.Marker({position: uluru, map: map});
 //Move the map to the device location
+
+
 smoothlyAnimatePanTo(map, latlng);
 //Changing text at device informaion in the DOM
 $('#device_id, #device_name, #battery, #message, #lat, #lng, #date, #timestamp').fadeOut(500, function() {
