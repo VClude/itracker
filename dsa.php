@@ -33,7 +33,8 @@ $val = $item->messageType;
 $ohyes =  date_create($TimeStr, new DateTimeZone($TimeZoneNameFrom))
         ->setTimezone(new DateTimeZone($TimeZoneNameTo))->format("Y-m-d H:i:s");
 $sql = "INSERT INTO`message`(`ID`, `messengerId`, `messengerName`, `unixTime`, `messageType`, `latitude`, `longitude`, `modelId`, `datetime`, `battery`, `altitude`)
-VALUES ('$item->id', '$item->messengerId', '$item->messengerName', '$item->unixTime', '$val', '$item->latitude', '$item->longitude', '$item->modelId', '$ohyes', '$item->batteryState', '$item->altitude')";
+VALUES ('$item->id', '$item->messengerId', '$item->messengerName', '$item->unixTime', '$val', '$item->latitude', '$item->longitude', '$item->modelId', '$ohyes', 
+'$item->batteryState', '$item->altitude')";
     echo "canot updet <br/>";
     echo $item->messengerId;
     echo $item->messengerName;

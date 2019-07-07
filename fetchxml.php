@@ -11,8 +11,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT message.* FROM `message`
-GROUP BY message.datetime,message.messengerName
+$sql = "SELECT devices.device_name,message.* FROM `message`
+LEFT JOIN devices ON message.messengerId = devices.device_id
+GROUP BY message.datetime,message.messengerId
 ORDER BY `message`.`datetime`  DESC";
 $result = $conn->query($sql);
 $xmlDom = new DOMDocument();

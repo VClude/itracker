@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stuMessages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd" timeStamp="27/04/2019 12:48:37 GMT" messageID="8edb1db0e30710058fbef9ab7106551a">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556369335</unixTime>
+<gps>N</gps>
+<payload length="9" source="pc" encoding="hex">0x6300B40000000B0000</payload>
+</stuMessage>
+</stuMessages>

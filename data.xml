@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><stuMessages messageID="013a4a90e2f71005850ef9ab7106551a" timeStamp="26/04/2019 17:03:41 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556298239</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x63003C000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="16878370e2ef100581caf9ab7106551a" timeStamp="26/04/2019 07:36:59 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556264237</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F70C634C1F1A0A50</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="1978ca00e30110058a41f9ab7106551a" timeStamp="27/04/2019 05:06:18 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556341596</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F72CFF4BE2E83A08</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="2714b5d0e2f61005822cf9ab7106551a" timeStamp="26/04/2019 16:02:41 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556294579</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x630036000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="2872dad0e2ef10058273f9ab7106551a" timeStamp="26/04/2019 07:42:00 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556264538</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F711D34C1FB10A50</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="35944fa8e2f11005812df9ab7106551a" timeStamp="26/04/2019 10:08:50 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556273348</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F7114A4C1DD60A50</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="42aed8d0e2ff10058d94f9ab7106551a" timeStamp="27/04/2019 02:54:39 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556333697</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F7119D4C1DB00A40</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="43996f80e2ff10058da7f9ab7106551a" timeStamp="27/04/2019 02:54:55 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556333712</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F712934C1E4B0A40</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="47e1fb58e2f41005803ef9ab7106551a" timeStamp="26/04/2019 13:48:42 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556286540</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x63002A000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="552da6c0e2f11005843af9ab7106551a" timeStamp="26/04/2019 10:17:40 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556273878</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F70FA94C1D463A48</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="56a660c0e2fe10058ec6f9ab7106551a" timeStamp="27/04/2019 01:48:39 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556329737</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x630072000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="59ca0a70e2f1100584a9f9ab7106551a" timeStamp="26/04/2019 10:18:57 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556273955</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F70FAD4C1D490A00</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="6068a858e2f310058801f9ab7106551a" timeStamp="26/04/2019 12:43:58 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556282656</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F7110D4C1D0B0A00</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="632b8ca0e30110058d5af9ab7106551a" timeStamp="27/04/2019 05:26:54 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556342832</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F729D24BE2420A40</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="71560048e2f3100589b5f9ab7106551a" timeStamp="26/04/2019 12:48:42 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556282940</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x630024000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="773ec900e2f710058138f9ab7106551a" timeStamp="26/04/2019 17:36:41 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556300219</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F711174C1D080A00</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="77f902c0e2f2100580acf9ab7106551a" timeStamp="26/04/2019 11:38:59 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556278757</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F7112F4C1D070A00</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="7844e928e2ee10058988f9ab7106551a" timeStamp="26/04/2019 06:52:44 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556261582</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F70D714C1F021A20</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="84e89c00e2f91005878af9ab7106551a" timeStamp="26/04/2019 20:03:41 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556309038</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x63004E000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="8edb1db0e30710058fbef9ab7106551a" timeStamp="27/04/2019 12:48:37 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556369335</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x6300B40000000B0000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="9774e7f0e2f110058999f9ab7106551a" timeStamp="26/04/2019 10:36:12 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556274990</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F711164C1D0B3A08</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="9a00ab80e2f1100589caf9ab7106551a" timeStamp="26/04/2019 10:36:55 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556275033</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F7111A4C1D0B0A00</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="9b00d7d0e30010058321f9ab7106551a" timeStamp="27/04/2019 04:30:56 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556339474</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F72AAD4BF3750A50</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="9c454558e30110058f6ff9ab7106551a" timeStamp="27/04/2019 05:42:52 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556343790</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F727B04BE1B50A00</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="b2943a40e2f610058eb4f9ab7106551a" timeStamp="26/04/2019 16:41:42 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556296920</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F711184C1D070A00</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="cf245218e2ff10058716f9ab7106551a" timeStamp="27/04/2019 03:33:56 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556336054</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F71A394C16600A40</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="d47c8378e2fc10058343f9ab7106551a" timeStamp="27/04/2019 00:00:41 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556323258</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x630066000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="e0de96f8e2ff100587fcf9ab7106551a" timeStamp="27/04/2019 03:38:53 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556336351</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F71B244C14E40A40</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="e1bb24c8e305100586b3f9ab7106551a" timeStamp="27/04/2019 10:48:37 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556362135</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x6300A80000000B0000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="e1f69ab0e2ee10058f7ef9ab7106551a" timeStamp="26/04/2019 07:22:17 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556263355</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F70C164C1EC83A18</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="e467d1d0e2f110058fe8f9ab7106551a" timeStamp="26/04/2019 10:57:43 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556276281</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x630018000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="e86d0a70e2fb100580c4f9ab7106551a" timeStamp="26/04/2019 22:54:40 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556319298</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x630060000000050000</payload>
+</stuMessage>
+</stuMessages><stuMessages messageID="f2a11958e2ee1005803df9ab7106551a" timeStamp="26/04/2019 07:26:57 GMT" xsi:noNamespaceSchemaLocation="http://cody.glpconnect.com/XSD/StuMessage_Rev1_0_1.xsd">
+<stuMessage>
+<esn>0-2610338</esn>
+<unixTime>1556263635</unixTime>
+<gps>N</gps>
+<payload encoding="hex" length="9" source="pc">0x00F70BAF4C1D750A50</payload>
+</stuMessage>
+</stuMessages></root>

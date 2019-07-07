@@ -7,7 +7,7 @@ $start = $_POST['start']; // Ambil data start
 $sql = mysqli_query($connect, "SELECT ID FROM message ORDER BY datetime DESC LIMIT 70"); // Query untuk menghitung seluruh data siswa
 $sql_count = mysqli_num_rows($sql); // Hitung data yg ada pada query $sql
 
-$query = "SELECT * FROM message WHERE (ID LIKE '%".$search."%' OR messengerId LIKE '%".$search."%' OR messengerName LIKE '%".$search."%' OR messageType LIKE '%".$search."%' OR latitude LIKE '%".$search."%' OR longitude LIKE '%".$search."%' OR datetime LIKE '%".$search."%')";
+$query = "SELECT devices.device_name,message.* FROM message LEFT JOIN devices ON message.messengerId = devices.device_id WHERE (message.ID LIKE '%".$search."%' OR message.messengerId LIKE '%".$search."%' OR devices.device_name LIKE '%".$search."%' OR message.messageType LIKE '%".$search."%' OR message.latitude LIKE '%".$search."%' OR message.longitude LIKE '%".$search."%' OR message.datetime LIKE '%".$search."%')";
 $order_field = $_POST['order'][0]['column']; // Untuk mengambil nama field yg menjadi acuan untuk sorting
 $order_ascdesc = $_POST['order'][0]['dir']; // Untuk menentukan order by "ASC" atau "DESC"
 $order = " ORDER BY ".$_POST['columns'][$order_field]['data']." ".$order_ascdesc;

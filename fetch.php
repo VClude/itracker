@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM message WHERE ID='$productID'";
+$sql = "SELECT devices.device_name as messengerName, message.* FROM message LEFT JOIN devices ON message.messengerId = devices.device_id WHERE message.ID='$productID'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

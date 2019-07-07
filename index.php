@@ -209,7 +209,7 @@ exit;
                         </tr>
                         </thead>
                         <tbody>
-                        <?php include('g2.php');?>
+                        <?php include 'g2.php';?>
                         </tbody>
     </table>
             
@@ -220,7 +220,7 @@ exit;
             <h4 class="title-info ml-3">Informasi Device</h4>
             <div class="container-fluid no-padding-left">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="info">
                             <i class="fas fa-fingerprint pull-left pl-1 grey-text mr-3"></i>
                             <div class="info-content">
@@ -229,7 +229,9 @@ exit;
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                </div>
+                <div class="row mt-2">
+                <div class="col-md-12">
                         <div class="info">
                             <i class="fas fa-monument pull-left pl-1 grey-text mr-3"></i>
                             <div class="info-content">
@@ -239,9 +241,8 @@ exit;
                         </div>
                     </div>
                 </div>
-
                 <div class="row mt-2">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="info">
                             <i class="fas fa-battery-full pull-left pl-1 grey-text mr-3"></i>
                             <div class="info-content">
@@ -250,7 +251,9 @@ exit;
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12">
                         <div class="info">
                             <i class="fas fa-envelope pull-left pl-1 grey-text mr-3"></i>
                             <div class="info-content">
@@ -262,7 +265,7 @@ exit;
                 </div>
 
                 <div class="row mt-2">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="info">
                             <i class="fas fa-globe pull-left pl-1 grey-text mr-3"></i>
                             <div class="info-content">
@@ -271,7 +274,9 @@ exit;
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                </div>
+                <div class="row mt-2">    
+                <div class="col-md-12">
                         <div class="info">
                             <i class="fas fa-globe pull-left pl-1 grey-text mr-3"></i>
                             <div class="info-content">
@@ -293,42 +298,28 @@ exit;
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-
-    <button type="button" id="bottombarCollapse" class="btn btn-white faa-parent animated-hover button-bottom"
-                data-toggle="tooltip" data-html="true"
-                title="<i class='fas fa-question pr-2'></i> Data Perangkat Detail">
-            <i class="fas fa-arrow-alt-circle-up faa-float"></i>
-        </button>
-        
-    </div>
     
 </div>
 
-<nav id="bottombar">
 
 <div class="sidebar-header">
     Detail Perangkat
 
-    <div id="dismiss-bottom">
-        <i class="fas fa-times"></i>
-    </div>
 </div>
 
-<div class="container-fluid black-text">
     <div class="row">
-        <div class="col-md-12">
-            <table id="deviceTable" class="table table-striped table-bordered" style="width:100%">
+        <div class="col-md-12 table-responsive">
+            <table id="deviceTable" class="table table-striped table-bordered table-sm" cellspacing="0" style="width:100%">
                 <thead>
                 <tr class="low">
-                    <th><i class="fas fa-globe-asia"></i> Device ID</th>
                     <th><i class="fas fa-pen-alt"></i> Device Name</th>
+                    <th><i class="fas fa-globe-asia"></i> Device ID</th>
                     <th><i class="fas fa-envelope-open"></i> Message Type</th>
                     <th><i class="fas fa-compass"></i> Latitude</th>
                     <th><i class="fas fa-compass"></i> Longitude</th>
                     <th><i class="fas fa-clock"></i> Timestamp</th>
                     <th><i class="fas fa-battery-full"></i> Battery</th>
-                    <th><i class="fas fa-plane-departure"></i> Altitude</th>
+                    <!-- <th><i class="fas fa-plane-departure"></i> Altitude</th> -->
                     <th><i class="fas fa-globe-asia"></i> ID</th>
                     
                 </tr>
@@ -339,8 +330,6 @@ exit;
             </table>
         </div>
     </div>
-</div>
-</nav>
 
 <?php 
 function relativeTime($time) {

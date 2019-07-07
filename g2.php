@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Asia/Pontianak');
-$string = file_get_contents("https://srv.nakulaproject.com/fetchxml.php");
+$string = file_get_contents("http://121869210359.ip-dynamic.com/itracker/fetchxml.php");
 $xml = new SimpleXMLElement($string);
 $i=1;
 $iyes=1;
@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 ?>
              <?php 
 foreach($xml->row as $item){
-if ($item->messengerName == $row["device_name"]){
+if ($item->device_name == $row["device_name"]){
 
 
 $asd = time();
@@ -43,32 +43,35 @@ $intrel = (int)$rel;
 
  if ($conv < 86400 && $item->messageType == "EXTREME-TRACK"){
 echo '<tr id='. $item->ID .'>
-<th scope="row">'. $item->messengerName .'</th>
+<th scope="row">'. $item->device_name .'</th>
 <td><i class="fas fa-circle green-text"></i> </td>
 </tr>';
  }
  elseif ($conv < 86400 && $item->messageType == "SOS"){
     echo '<tr id='. $item->ID .'>
-    <th scope="row">'. $item->messengerName .'</th>
+    <th scope="row">'. $item->device_name .'</th>
     <td><i class="fas fa-circle yellow-text"></i> </td>
     </tr>';
 }
- elseif ($conv > 86400){
+ elseif ($conv > 86400 && $conv < 259200){
 
     echo '<tr id='. $item->ID .'>
-    <th scope="row">'. $item->messengerName .'</th>
+    <th scope="row">'. $item->device_name .'</th>
     <td><i class="fas fa-circle red-text"></i> </td>
     </tr>';
  }
 
  elseif($conv > 259200){
     echo '<tr id='. $item->ID .'>
-    <th scope="row">'. $item->messengerName .'</th>
+    <th scope="row">'. $item->device_name .'</th>
     <td><i class="fas fa-square black-text"></i> </td>
     </tr>';
  }
  else{
-
+    echo '<tr id='. $item->ID .'>
+    <th scope="row">'. $item->device_name .'</th>
+    <td><i class="fas fa-square black-text"></i> </td>
+    </tr>';
  }
 
 
